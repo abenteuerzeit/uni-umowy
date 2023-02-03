@@ -1,0 +1,27 @@
+<h1>Rachunek do umowy o świadczenie usług</h1>  
+<p>Nazwisko i imię:</p> {{ name }}
+ 	 	 	 	 	 	    	              
+<h2>RACHUNEK z dnia {{ date }} </h2>
+<p>dla Akademii Sztuk Pięknych im. Jana Matejki w Krakowie za wykonanie przedmiotu umowy o świadczenie usług nr {{contractId}} z dnia {{ contractDate}} na kwotę brutto {{ amountInPLN }} PLN (słownie złotych: {{ amountInWords }})</p>   
+<p>Sposób płatności : przelew na rachunek bankowy nr {{ bankAcctNr }} </p>
+<p> Oświadczam , że pracę wykonałem osobiście, w godzinach  pozasłużbowych </p>
+<p>Podpisano elektronicznie {{ name }}<br>{{signatureField}}</p><p>Podpis Wykonawcy</p>
+<hr />
+<p>Stwierdzam, że  praca została wykonana zgodnie z umową.</p> 
+<p>  Podpisano elektronicznie</p>
+<p>podpis kierującego jednostką odpowiedzialną merytoryczni</p> 
+<hr />
+<p>Oświadczam, że: z tytułu umowy zlecenia poza Akademią Sztuk Pięknych im. Jana Matejki w Krakowie moje wynagrodzenie w bieżącym miesiącu tj. {{ month }} {{ year }} było niższe od minimalnego wynagrodzenia ze stosunku pracy ustalonego na ten rok w przepisach powszechnie obowiązujących.</p>
+<p>Podpisano elektronicznie dr Adrian Mróz <br> podpis Wykonawcy </p> 	 	 	 	 
+<dl>
+    <dt>Koszt uzyskania</dt>
+    <dd>{{ cost.acquisition }} zł</dd>
+    <dt>Podatek</dt>
+    <dd>{{ cost.tax }} zł</dd>
+    <dt>Konto kosztowe</dt>
+    <dd>{{ cost.acct }} zł</dd>
+    <dt>Kwestor</dt>
+    <dd> {{ cost.quaestor }} zł</dd>
+</dl>
+<p>Zatwierdzam do wypłaty</p><p>Rektor/ z up. Rekotra*</p>
+<p>* niepotrzebne skreślić</p> 
