@@ -2,27 +2,32 @@ const express = require("express");
 const { engine } = require("express-handlebars");
 const morgan = require("morgan");
 const { Rachunek } = require("./models/rachunek");
-
+const bodyParser = require("body-parser");
 const app = express();
+const router = express.Router();
+
 app.engine("handlebars", engine());
 app.set("view engine", "handlebars");
 app.set("views", "./views");
 app.use(morgan("dev"));
+app.use(bodyParser.json());
 
 const PORT = 3000 || process.env.PORT;
 
-app.get("/", (req, res) => {
+app.use('/', router);
+
+router.get("/", (req, res, next) => {
   res.status(200).render("home");
 });
 
-app.get("/rachunek", (req, res) => {
+router.get("/rachunek", async (req, res, next) => {
   const bill = new Rachunek(1234);
   const dummyViewData = {
     name: "Adrian Mroz",
     date: new Date().toISOString().split("T")[0],
     contractID: "DZ.1234.5678.90",
-    amountInPLN: bill.getAmount(),
-    amountInWords: bill.getWords(),
+    amountInPLN: await bill.getAmount(),
+    amountInWords: await bill.getWords(),
     bankAcctNr: `1234 5678 9012 3456 7890 1234`,
     cost: {
       acquisition: ".".repeat(16),
@@ -30,14 +35,22 @@ app.get("/rachunek", (req, res) => {
       acct: ".".repeat(16),
       quaestor: ".".repeat(16),
     },
-    signatureField: ".".repeat(16)
+    signatureField: ".".repeat(16),
   };
   res.status(200).render("rachunek", dummyViewData);
 });
 
-app.get("/slownie", (req, res) => {
-  const object = new Rachunek(Math.floor(Math.random() * 100));
-  res.status(200).json(object);
+router.get("/slownie", async (req, res, next) => {
+  console.log(`request query: ${req.query.payout}`);
+  const asyncPayout = async (amount) => {
+    const int = parseInt(amount);
+    const bill = new Rachunek(int);
+    const words = await bill.getWords();
+    return words;
+  };
+  const payout = await asyncPayout(req.query.payout);
+  console.log(payout);
+  res.status(200).json({ payout });
 });
 
 app.listen(PORT, () => {

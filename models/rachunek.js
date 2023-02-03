@@ -9,12 +9,18 @@ const _zlotys = ["złoty","złote","złotych"];
 class Rachunek {
     constructor(payout) {
         if (payout < 0) throw new Error('Negative numbers are not allowed');
-        this.payout = payout;
+        try {
+            const isInt = Number.isInteger(payout);
+            if (!isInt) throw new Error('Only integers are allowed');
+            this.payout = payout;
+        } catch (err) {
+            console.log(err);
+        }
     }
-    getAmount() {
+    async getAmount() {
         return this.payout;
     }
-    getWords() {
+    async getWords() {
         return this._toWords();
     }
     _toWords() {        
