@@ -11,10 +11,10 @@ describe("Home page", () => {
       .expect("Content-Type", /html/)
       .expect(200, done);
   });
-  describe("slownie", () => {
+  describe("passing query to slownie returns ok", () => {
     it("should return 200", (done) => {
       request(app)
-        .get("/slownie")
+        .get("/slownie?payout=1234")
         .set("Content-Type", "application/json")
         .expect("Content-Type", /json/)
         .expect(200, done);
@@ -46,34 +46,36 @@ describe("Rachunek page", () => {
   });
 });
 
-describe("Currency", () => {
+describe("Currency", async () => {
   it("throws error for negative values", () => {
     assert.throws(() => new Rachunek(-1), Error);
   });
-  describe("uses correct grammar", () => {
-    it("has złotych for the number 0", () => {
+  describe("uses correct grammar", async () => {
+    it("has złotych for the number 0", async () => {
       const r0 = new Rachunek(0);
-      expect(r0.getWords()).to.include("złotych");
+      const words = await r0.getWords();
+      expect(words).to.include("złotych");
     });
-    it("has złoty for the number 1: ", () => {
+    it("has złoty for the number 1: ", async () => {
       const r1 = new Rachunek(1);
-      expect(r1.getWords()).to.equal("jeden złoty");
+      const words = await r1.getWords();
+      expect(words).to.equal("jeden złoty");
     });
-    it("has złote for 2, 3 or 4", () => {
-      const r2 = new Rachunek(2);
-      const r3 = new Rachunek(3);
-      const r4 = new Rachunek(4);
-      expect(r2.getWords()).to.include("złote");
-      expect(r3.getWords()).to.include("złote");
-      expect(r4.getWords()).to.include("złote");
-    });
-    it("has złote for the penultimate digit that is different from 1", () => {
-      const nums = [4, 52, 163, 8874];
-      nums.forEach((n) => {
-        expect(new Rachunek(n).getWords()).to.include("złote");
+    it("has złote for 2, 3 or 4", async () => {
+      const nums = [2, 3, 4];
+      nums.forEach(async (n) => {
+        const words = await new Rachunek(n).getWords();
+        expect(words).to.include("złote");
       });
     });
-    it("has złotych for other numbers (ending with the digits: 0, 1, 5-9 or 12, 13, 14)", () => {
+    it("has złote for the penultimate digit that is different from 1", async () => {
+      const nums = [4, 52, 163, 8874];
+      nums.forEach(async (n) => {
+        const words = await new Rachunek(n).getWords();
+        expect(words).to.include("złote");
+      });
+    });
+    it("has złotych for other numbers (ending with the digits: 0, 1, 5-9 or 12, 13, 14)", async () => {
       const endings = ["0", "1", "5", "6", "7", "8", "9"];
       const numbers = [12, 13, 14];
       const size = 100;
@@ -89,11 +91,12 @@ describe("Currency", () => {
         }
       }
       numbers.sort((a, b) => a - b);
-      numbers.forEach((n) => {
-        const r = new Rachunek(n).getWords();
+      numbers.forEach(async (n) => {
+        const r = new Rachunek(n);
+        const words = await r.getWords();
         try {
-          expect(r).to.include("złotych");
-          expect(r).to.not.include("złote");
+          expect(words).to.include("złotych");
+          expect(words).to.not.include("złote");
         } catch (e) {
           console.log(`Error for number ${n}: ${r}`);
           throw e;
