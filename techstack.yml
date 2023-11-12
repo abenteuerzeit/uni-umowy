@@ -1,0 +1,177 @@
+repo_name: abenteuerzeit/uni-umowy
+report_id: 9df0408d3ba78940f38e81a338ef8960
+repo_type: Public
+timestamp: '2023-11-12T10:23:17+00:00'
+requested_by: abenteuerzeit
+provider: github
+branch: master
+detected_tools_count: 13
+tools:
+- name: Handlebars.js
+  description: Minimal Templating on Steroids
+  website_url: http://handlebarsjs.com/
+  open_source: true
+  hosted_saas: false
+  category: Languages & Frameworks
+  sub_category: Templating Languages & Extensions
+  image_url: https://img.stackshare.io/service/1143/Handlebars.png
+  detection_source: Repo Metadata
+- name: JavaScript
+  description: Lightweight, interpreted, object-oriented language with first-class
+    functions
+  website_url: https://developer.mozilla.org/en-US/docs/Web/JavaScript
+  open_source: true
+  hosted_saas: false
+  category: Languages & Frameworks
+  sub_category: Languages
+  image_url: https://img.stackshare.io/service/1209/javascript.jpeg
+  detection_source: Repo Metadata
+- name: ExpressJS
+  description: Sinatra inspired web development framework for node.js -- insanely
+    fast, flexible, and simple
+  website_url: http://expressjs.com/
+  version: 4.18.2
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Languages & Frameworks
+  sub_category: Microframeworks (Backend)
+  image_url: https://img.stackshare.io/service/1163/hashtag.png
+  detection_source_url: package-lock.json
+  detection_source: package.json
+  last_updated_by: abenteuerzeit
+  last_updated_on: 2023-02-03 02:01:56.000000000 Z
+- name: Chai
+  description: A BDD / TDD assertion library
+  website_url: http://chaijs.com/
+  version: 4.3.7
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Build, Test, Deploy
+  sub_category: Javascript Testing Framework
+  image_url: https://img.stackshare.io/service/1725/chai.png
+  detection_source_url: package-lock.json
+  detection_source: package.json
+  last_updated_by: abenteuerzeit
+  last_updated_on: 2023-02-03 02:01:56.000000000 Z
+- name: Git
+  description: Fast, scalable, distributed revision control system
+  website_url: http://git-scm.com/
+  open_source: true
+  hosted_saas: false
+  category: Build, Test, Deploy
+  sub_category: Version Control System
+  image_url: https://img.stackshare.io/service/1046/git.png
+  detection_source: Repo Metadata
+- name: Mocha
+  description: Simple, flexible, fun javascript test framework for node.js &amp; the
+    browser
+  website_url: http://mochajs.org/
+  version: 10.2.0
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Build, Test, Deploy
+  sub_category: Javascript Testing Framework
+  image_url: https://img.stackshare.io/service/832/mocha.png
+  detection_source_url: package-lock.json
+  detection_source: package.json
+  last_updated_by: abenteuerzeit
+  last_updated_on: 2023-02-03 04:50:00.000000000 Z
+- name: SuperTest
+  description: 'A library for testing node.js HTTP servers '
+  website_url: https://www.npmjs.com/package/supertest
+  version: 6.3.3
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Build, Test, Deploy
+  sub_category: Javascript Testing Framework
+  image_url: https://img.stackshare.io/no-img-open-source.png
+  detection_source_url: package-lock.json
+  detection_source: package.json
+  last_updated_by: abenteuerzeit
+  last_updated_on: 2023-02-03 02:01:56.000000000 Z
+- name: nodemon
+  description: A simple monitor script for use during development of a node.js app
+  website_url: http://nodemon.io/
+  version: 2.0.20
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Monitoring
+  sub_category: node.js Application Monitoring
+  image_url: https://img.stackshare.io/service/5577/preview.png
+  detection_source_url: package-lock.json
+  detection_source: package.json
+  last_updated_by: abenteuerzeit
+  last_updated_on: 2023-02-03 04:50:00.000000000 Z
+- name: npm
+  description: The package manager for JavaScript.
+  website_url: https://www.npmjs.com/
+  open_source: false
+  hosted_saas: false
+  category: Build, Test, Deploy
+  sub_category: Front End Package Manager
+  image_url: https://img.stackshare.io/service/1120/lejvzrnlpb308aftn31u.png
+  detection_source: package.json
+  last_updated_by: abenteuerzeit
+  last_updated_on: 2023-02-03 02:01:56.000000000 Z
+- name: express
+  description: Fast, unopinionated, minimalist web framework
+  package_url: https://www.npmjs.com/express
+  version: 4.18.2
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: npm Packages
+  image_url: https://img.stackshare.io/package/15818/default_db4a7791d2f1174547374b9b587bc10fec088a5a.png
+  detection_source_url: package-lock.json
+  detection_source: package.json
+  last_updated_by: abenteuerzeit
+  last_updated_on: 2023-02-03 02:01:56.000000000 Z
+- name: express-handlebars
+  description: A Handlebars view engine for Express which doesn't suck
+  package_url: https://www.npmjs.com/express-handlebars
+  version: 6.0.7
+  license: BSD-3-Clause
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: npm Packages
+  image_url: https://img.stackshare.io/package/17718/default_7ff152b9bcf219fad0d56c78a016d5bad6a2a526.png
+  detection_source_url: package-lock.json
+  detection_source: package.json
+  last_updated_by: abenteuerzeit
+  last_updated_on: 2023-02-03 02:01:56.000000000 Z
+- name: handlebars
+  description: Handlebars provides the power necessary to let you build semantic templates
+    effectively with no frustration
+  package_url: https://www.npmjs.com/handlebars
+  version: 4.7.7
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: npm Packages
+  image_url: https://img.stackshare.io/package/16013/default_f8be85789693a9901dbcfa43c135c60525ae49a1.png
+  detection_source_url: package-lock.json
+  detection_source: package.json
+  last_updated_by: abenteuerzeit
+  last_updated_on: 2023-02-03 02:01:56.000000000 Z
+- name: morgan
+  description: HTTP request logger middleware for node.js
+  package_url: https://www.npmjs.com/morgan
+  version: 1.10.0
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: npm Packages
+  image_url: https://img.stackshare.io/package/16097/default_c7b204838197013798409fa2b4dafce450edc7fb.png
+  detection_source_url: package-lock.json
+  detection_source: package.json
+  last_updated_by: abenteuerzeit
+  last_updated_on: 2023-02-03 02:01:56.000000000 Z
