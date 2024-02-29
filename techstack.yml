@@ -2,7 +2,7 @@ repo_name: abenteuerzeit/uni-umowy
 report_id: 9df0408d3ba78940f38e81a338ef8960
 version: 0.1
 repo_type: Public
-timestamp: '2024-01-05T08:49:06+00:00'
+timestamp: '2024-02-29T18:40:06+00:00'
 requested_by: abenteuerzeit
 provider: github
 branch: master
@@ -84,7 +84,7 @@ tools:
   last_updated_by: abenteuerzeit
   last_updated_on: 2023-02-03 04:50:00.000000000 Z
 - name: SuperTest
-  description: 'A library for testing node.js HTTP servers '
+  description: A library for testing node.js HTTP servers
   website_url: https://www.npmjs.com/package/supertest
   version: 6.3.3
   license: MIT
